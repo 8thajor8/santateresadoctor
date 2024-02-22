@@ -1,0 +1,582 @@
+$primary-blue: #2E3192;
+$head-text: 'Archivo Black';
+$light-gray:rgb(188, 188, 189);
+
+
+
+body{
+    font-family: "Cabin";
+    background-color: black;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn {
+    transition: transform 0.5s;
+    
+    &:hover {
+        animation: pulsate 1s infinite;
+    }
+}
+.navbar{
+    background-color: $primary-blue;
+    transition: top 0.5s; /* Add smooth transition */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    .navbar-brand {
+        max-width: 30%;
+        margin-right: 0px;
+        img{
+            width: 100%;
+        }
+    }
+    .nav-item{
+        text-align: center;
+    }
+    li{
+        margin: 0 15px;
+        a{
+            text-transform: uppercase;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            &:hover {
+                transform: scale(1.1);
+            }
+        } 
+    }
+    .collapse.navbar-collapse {
+            
+        justify-content: center;
+        
+    }
+    .call__button {
+        margin-left: auto;
+        background-color: $light-gray;
+        
+    }
+}
+
+.navbar.hidden {
+    top: -100px; /* Move navbar off-screen */
+}
+
+.call__button{
+    background-color: $primary-blue;
+    border-radius: 15px;
+    color: white;
+    font-weight: 100;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
+    i{
+        margin-right: 10px;
+    }
+    &:hover{
+        background-color: #1C75BC;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        .collapse.navbar-collapse {
+            flex-grow: 1;
+            order: 2; /* Move the menu below */
+        }
+        .call__button__container {
+            order: 3; /* Move the call button to the right */
+        }
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity as needed */
+    z-index: 1;
+}
+
+
+.banner {
+    
+    height: 100vh;
+    min-height: 500px;
+    background-color: #ffffff; // Fallback color
+    overflow: hidden; // Ensure shapes don't overflow
+    position: relative;
+    z-index: 0;
+    .parallax__container{
+        height: 150%; /* Adjusted height */
+        
+        position: absolute;
+        z-index: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+        background-image: url('../assets/doctor.png');
+        background-color: transparent;
+        background-size: cover;
+        background-attachment: fixed; 
+        background-repeat: no-repeat;
+        
+    }
+    .ripple-background{
+        position: absolute;
+        z-index: 1;
+    }
+    .circle{
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.488);
+        box-shadow: 0px 0px 10px 0px #000000;
+        
+    }
+    .small{
+        width: 400px;
+        height: 400px;
+        left: -150px;
+        bottom: -950px;
+    }
+    .medium{
+        width: 600px;
+        height: 600px;
+        left: -250px;
+        bottom: -1050px;
+    }
+    .large{
+        width: 800px;
+        height: 800px;
+        left: -350px;
+        bottom: -1150px;
+    }
+    .xlarge{
+        width: 1000px;
+        height: 1000px;
+        left: -450px;
+        bottom: -1250px;
+    }
+    .xxlarge{
+        width: 1200px;
+        height: 1200px;
+        left: -550px;
+        bottom: -1350px;
+    }
+   
+    .shade1{
+        opacity: 0.1;
+    }
+    .shade2{
+        opacity: 0.5;
+    }
+    .shade3{
+        opacity: 0.7;
+    }
+    .shade4{
+        opacity: 0.8;
+    }
+    .shade5{
+        opacity: 0.9;
+    }
+    
+    .texto__banner{ 
+        color: $primary-blue;
+        position: relative;
+        z-index: 2;
+        max-width: 45%;
+        margin-bottom: 30px;
+        .animate__fadeInLeft{
+            animation-delay: 0.1s;
+        }
+        .animate__fadeInRight{
+            animation-delay: 0.4s;
+        }
+        .animate__fadeInUp{
+            animation-delay: 0.7s;
+        }
+        h1{
+            font-family: $head-text;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+            font-size: 3.5rem;
+        }
+        .parrafo__banner{
+            font-size: 1.6rem;
+            max-width: 80%;
+            color: white;
+        }
+        .contactus__button{
+            background-color: $primary-blue;
+            border-radius: 20px;
+            color: white;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 1.2rem;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
+            i{
+                margin-right: 10px;
+            }
+            &:hover{
+                background-color: #1C75BC;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .banner{
+        .texto__banner {
+            max-width: 95%;
+            h1 {
+                font-size: 2rem;
+                
+            }
+            .parrafo__banner {
+                font-size: 1.5rem;
+                margin-bottom: 50px;
+                max-width: 100%;
+            }
+        }
+        .right__circle{
+            display: none;        
+        }
+        .small{
+            width: 400px;
+            height: 400px;
+            left: -100px;
+            bottom: -500px;
+        }
+        
+        .medium{
+            width: 600px;
+            height: 600px;
+            left: -200px;
+            bottom: -600px;
+        }
+        
+        .large{
+            width: 800px;
+            height: 800px;
+            left: -300px;
+            bottom: -700px;
+        }
+        
+        .xlarge{
+            width: 1000px;
+            height: 1000px;
+            left: -400px;
+            bottom: -800px;
+        }
+    
+        
+        .xxlarge{
+            width: 1200px;
+            height: 1200px;
+            left: -500px;
+            bottom: -900px;
+        }
+    
+        
+    }
+        
+}
+
+
+.location__container {
+    display: flex;
+    flex-direction: row;
+}
+
+.location__info {
+    width: 35%;
+    padding: 50px;
+    background-color: $light-gray;
+    color: black;
+    text-shadow: 2px 2px 4px    rgba(0, 0, 0, 0.3);
+    h2 {
+        font-size: 1.5em;
+        font-family: $head-text;
+        margin-bottom: 30px;
+        color: white;
+
+    }
+    p {
+        margin-bottom: 25px;
+        font-size: 1.1rem;
+        a{
+            color: white;
+            font-weight: 600;
+        }
+    }
+    
+}
+
+.whatsapp__button{
+    background-color: $primary-blue;
+    border-radius: 30px;
+    color: white;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
+    font-family: $head-text;
+    font-weight: 800;
+    font-size: 1.2rem;
+    &:hover{
+        background-color: #1C75BC;
+    }
+    .whatsapp__logo{
+        margin-right: 8px;
+        width: 30px;
+    }
+}
+
+.location__map {
+    width: 65%;
+    
+}
+
+@media (max-width: 992px) {
+
+    .location__container {
+        flex-direction: column;
+        .location__map
+        {
+            width: 100%;
+            height: 400px;
+            order: 1;
+        }
+        .location__info {
+            width: 100%;
+            text-align: center;
+            order: 2;
+            padding: 20px;
+        }
+    }
+    
+}
+
+.services__container {
+    overflow: hidden;
+    position: relative;
+    padding: 50px 0;
+    text-align: center;
+    .parallax__services{
+        height: 150%; /* Adjusted height */
+        
+        position: absolute;
+        z-index: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+        background-image: url('../assets/servicesbackground.jpg');
+        background-color: transparent;
+        background-size: cover;
+        background-attachment: fixed; 
+        background-repeat: no-repeat;
+        
+    }
+}
+
+.services__title {
+    font-size: 2.3rem;
+    font-family: $head-text;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px    rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.card__container {
+    max-width: 1000px; /* Adjust as needed */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 30px; /* Gap between cards */
+    justify-items: center; /* Center items horizontally */
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    width: 100%; /* Occupy full width of the column */
+    padding: 28px;
+    
+    border: 0;
+    background-color: rgb(224, 224, 224);
+    border-radius: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Combine transitions */
+    box-shadow: -1px 1px 12px 5px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 1px 12px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 12px 5px rgba(0, 0, 0,);
+    
+    transition: transform 0.2s;
+    &:hover {
+        transform: scale(0.70);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    }
+}
+
+.card__image{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+    object-position: center; /* Center the image within its container */
+    margin-bottom: 20px; /* Add margin to separate image from text */
+}
+
+.card__title {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.card__text {
+    font-size: 16px;
+}
+
+@media (max-width: 992px) {
+    .services__container{
+        .services__title{
+            font-size: 1.7rem;
+        }
+        .card__container {
+            grid-template-columns: repeat(1, 1fr);
+            .card{
+                width: 80%;
+            }
+        }
+    }
+}
+
+.contact__container {
+    background-color: #D9D9D9; /* Light gray background color */
+    background: linear-gradient(to bottom, 
+    #D9D9D9 0%,       /* Start with white */
+    #D9D9D9 80%,      /* Mostly white */
+    #4e87b7      /* Ends with blue */
+    );
+    padding: 50px 0;
+    text-align: center;
+    border: none;
+}
+
+.contact__tittle__container{
+    color: $primary-blue;
+    font-family: $head-text;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.contact__divider {
+    width: 30%;
+    height: 4px;
+    background-color: $primary-blue; /* Black color for the divider */
+    display: inline-block;
+}
+
+.contact__title {
+    display: inline-block;
+    text-shadow: 2px 2px 4px    rgba(0, 0, 0, 0.3);
+    
+    margin: 0 20px; /* Adjust margin to match the divider width */
+}
+
+.contact__content {
+    margin-top: 20px;
+    h3 {
+        font-size: 1.6rem;
+        
+    }
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+.whatsapp__round {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 999;
+    transition: transform 0.3s ease-in-out;
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+    
+    img {
+        width: 80px; /* Adjust size as needed */
+        height: auto;
+        border-radius: 30%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.footer__container {
+    background-color: #4e87b7; /* Blue background color */
+    background: linear-gradient(to bottom, 
+    #4e87b7 0%,       /* Start with white */
+    
+    $primary-blue     /* Ends with blue */
+    );
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer__logo {
+    width: 250px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.footer__disclaimer {
+    font-size: 1.1rem;
+    
+}
+
+@media (max-width: 992px) {
+    .contact__container{
+        padding: 30px;
+        .contact__divider{
+            display: none;
+        }
+        .contact__title{
+            font-size: 1.8rem;
+        }
+        h3{
+            font-size: 1.2rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+    }
+    .whatsapp__round {
+        bottom: 20px;
+        right: 40px;
+        img {
+            width: 70px; /* Adjust size as needed */
+            
+        }
+    }
+    .footer__container {
+        
+        padding: 15px;
+        .footer__logo{
+            width: 150px;
+        }
+        p{
+        font-size: 0.8rem;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
