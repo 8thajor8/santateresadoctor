@@ -1,11 +1,26 @@
-$primary-blue: #2E3192;
-$head-text: 'Archivo Black';
+$primary-blue: rgb(51, 82, 150);
+$primary-red: rgb(239, 62, 66);
+$head-text: 'AmsiPro-UltraItalic';
 $light-gray:rgb(188, 188, 189);
+$aqua: rgb(147,212,218);
 
+@font-face {
+    font-family: 'AmsiPro-UltraItalic';
+    src: url('../fonts/AmsiPro-UltraItalic.ttf') format('woff2'), /* Modern Browsers */
+         url('../fonts/AmsiPro-UltraItalic.ttf') format('woff');   /* Older Browsers */
+    /* Add additional font formats as needed */
+  }
+
+  @font-face {
+    font-family: 'AmsiPro-Regular';
+    src: url('../fonts/AmsiPro-Regular.ttf') format('woff2'), /* Modern Browsers */
+         url('../fonts/AmsiPro-Regular.ttf') format('woff');   /* Older Browsers */
+    /* Add additional font formats as needed */
+  }
 
 
 body{
-    font-family: "Cabin";
+    font-family: 'AmsiPro-Regular';
     background-color: black;
 }
 
@@ -63,7 +78,7 @@ body{
     }
     .call__button {
         margin-left: auto;
-        background-color: $light-gray;
+        background-color: $primary-red;
         
     }
 }
@@ -73,16 +88,16 @@ body{
 }
 
 .call__button{
-    background-color: $primary-blue;
+    background-color: $primary-red;
     border-radius: 15px;
     color: white;
-    font-weight: 100;
+    font-weight: bold;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
     i{
         margin-right: 10px;
     }
     &:hover{
-        background-color: #1C75BC;
+        background-color: $aqua;
     }
 }
 
@@ -216,18 +231,18 @@ body{
             color: white;
         }
         .contactus__button{
-            background-color: $primary-blue;
+            background-color: $primary-red;
             border-radius: 20px;
             color: white;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: bold;
             font-size: 1.2rem;
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
             i{
                 margin-right: 10px;
             }
             &:hover{
-                background-color: #1C75BC;
+                background-color: $aqua;
             }
         }
     }
@@ -297,40 +312,50 @@ body{
     flex-direction: row;
 }
 
+.background__design{
+    height: 70px;
+    background-image: url(../assets/diseno.svg);
+    
+    }
+
+
 .location__info {
     width: 35%;
-    padding: 50px;
-    background-color: $light-gray;
-    color: black;
+    background-color: $primary-blue;
+    color: white;
     text-shadow: 2px 2px 4px    rgba(0, 0, 0, 0.3);
-    h2 {
-        font-size: 1.5em;
-        font-family: $head-text;
-        margin-bottom: 30px;
-        color: white;
-
-    }
-    p {
-        margin-bottom: 25px;
-        font-size: 1.1rem;
-        a{
+    
+    .location__content{
+        padding: 20px 50px;
+        h2 {
+            font-size: 1.5em;
+            font-family: $head-text;
+            margin-bottom: 30px;
             color: white;
-            font-weight: 600;
+
+        }
+        p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            a{
+                color: white;
+                font-weight: 600;
+            }
         }
     }
     
 }
 
 .whatsapp__button{
-    background-color: $primary-blue;
+    background-color: $aqua;
     border-radius: 30px;
     color: white;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
     font-family: $head-text;
-    font-weight: 800;
+    
     font-size: 1.2rem;
     &:hover{
-        background-color: #1C75BC;
+        background-color: $primary-blue;
     }
     .whatsapp__logo{
         margin-right: 8px;
@@ -357,7 +382,8 @@ body{
             width: 100%;
             text-align: center;
             order: 2;
-            padding: 20px;
+
+            
         }
     }
     
@@ -497,6 +523,7 @@ body{
     margin-top: 20px;
     h3 {
         font-size: 1.6rem;
+        font-weight: bold;
         
     }
     p {

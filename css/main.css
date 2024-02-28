@@ -1,5 +1,15 @@
+@font-face {
+  font-family: "AmsiPro-UltraItalic";
+  src: url("../fonts/AmsiPro-UltraItalic.ttf") format("woff2"), url("../fonts/AmsiPro-UltraItalic.ttf") format("woff"); /* Older Browsers */
+  /* Add additional font formats as needed */
+}
+@font-face {
+  font-family: "AmsiPro-Regular";
+  src: url("../fonts/AmsiPro-Regular.ttf") format("woff2"), url("../fonts/AmsiPro-Regular.ttf") format("woff"); /* Older Browsers */
+  /* Add additional font formats as needed */
+}
 body {
-  font-family: "Cabin";
+  font-family: "AmsiPro-Regular";
   background-color: black;
 }
 
@@ -22,7 +32,7 @@ body {
 }
 
 .navbar {
-  background-color: #2E3192;
+  background-color: rgb(51, 82, 150);
   transition: top 0.5s; /* Add smooth transition */
   padding: 10px;
   display: flex;
@@ -55,7 +65,7 @@ body {
 }
 .navbar .call__button {
   margin-left: auto;
-  background-color: rgb(188, 188, 189);
+  background-color: rgb(239, 62, 66);
 }
 
 .navbar.hidden {
@@ -63,17 +73,17 @@ body {
 }
 
 .call__button {
-  background-color: #2E3192;
+  background-color: rgb(239, 62, 66);
   border-radius: 15px;
   color: white;
-  font-weight: 100;
+  font-weight: bold;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
 }
 .call__button i {
   margin-right: 10px;
 }
 .call__button:hover {
-  background-color: #1C75BC;
+  background-color: rgb(147, 212, 218);
 }
 
 @media (min-width: 992px) {
@@ -172,7 +182,7 @@ body {
   opacity: 0.9;
 }
 .banner .texto__banner {
-  color: #2E3192;
+  color: rgb(51, 82, 150);
   position: relative;
   z-index: 2;
   max-width: 45%;
@@ -188,7 +198,7 @@ body {
   animation-delay: 0.7s;
 }
 .banner .texto__banner h1 {
-  font-family: "Archivo Black";
+  font-family: "AmsiPro-UltraItalic";
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   font-size: 3.5rem;
 }
@@ -198,11 +208,11 @@ body {
   color: white;
 }
 .banner .texto__banner .contactus__button {
-  background-color: #2E3192;
+  background-color: rgb(239, 62, 66);
   border-radius: 20px;
   color: white;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 1.2rem;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
 }
@@ -210,7 +220,7 @@ body {
   margin-right: 10px;
 }
 .banner .texto__banner .contactus__button:hover {
-  background-color: #1C75BC;
+  background-color: rgb(147, 212, 218);
 }
 
 @media (max-width: 992px) {
@@ -264,39 +274,45 @@ body {
   flex-direction: row;
 }
 
+.background__design {
+  height: 70px;
+  background-image: url(../assets/diseno.svg);
+}
+
 .location__info {
   width: 35%;
-  padding: 50px;
-  background-color: rgb(188, 188, 189);
-  color: black;
+  background-color: rgb(51, 82, 150);
+  color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
-.location__info h2 {
+.location__info .location__content {
+  padding: 20px 50px;
+}
+.location__info .location__content h2 {
   font-size: 1.5em;
-  font-family: "Archivo Black";
+  font-family: "AmsiPro-UltraItalic";
   margin-bottom: 30px;
   color: white;
 }
-.location__info p {
+.location__info .location__content p {
   margin-bottom: 25px;
   font-size: 1.1rem;
 }
-.location__info p a {
+.location__info .location__content p a {
   color: white;
   font-weight: 600;
 }
 
 .whatsapp__button {
-  background-color: #2E3192;
+  background-color: rgb(147, 212, 218);
   border-radius: 30px;
   color: white;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
-  font-family: "Archivo Black";
-  font-weight: 800;
+  font-family: "AmsiPro-UltraItalic";
   font-size: 1.2rem;
 }
 .whatsapp__button:hover {
-  background-color: #1C75BC;
+  background-color: rgb(51, 82, 150);
 }
 .whatsapp__button .whatsapp__logo {
   margin-right: 8px;
@@ -320,7 +336,6 @@ body {
     width: 100%;
     text-align: center;
     order: 2;
-    padding: 20px;
   }
 }
 .services__container {
@@ -345,7 +360,7 @@ body {
 
 .services__title {
   font-size: 2.3rem;
-  font-family: "Archivo Black";
+  font-family: "AmsiPro-UltraItalic";
   color: white;
   text-transform: uppercase;
   margin-bottom: 30px;
@@ -421,8 +436,8 @@ body {
 }
 
 .contact__tittle__container {
-  color: #2E3192;
-  font-family: "Archivo Black";
+  color: rgb(51, 82, 150);
+  font-family: "AmsiPro-UltraItalic";
   font-size: 2.3rem;
   text-transform: uppercase;
   margin-bottom: 50px;
@@ -431,7 +446,7 @@ body {
 .contact__divider {
   width: 30%;
   height: 4px;
-  background-color: #2E3192; /* Black color for the divider */
+  background-color: rgb(51, 82, 150); /* Black color for the divider */
   display: inline-block;
 }
 
@@ -446,6 +461,7 @@ body {
 }
 .contact__content h3 {
   font-size: 1.6rem;
+  font-weight: bold;
 }
 .contact__content p {
   font-size: 1.2rem;
@@ -470,7 +486,7 @@ body {
 
 .footer__container {
   background-color: #4e87b7; /* Blue background color */
-  background: linear-gradient(to bottom, #4e87b7 0%, #2E3192);
+  background: linear-gradient(to bottom, #4e87b7 0%, rgb(51, 82, 150));
   color: white;
   text-align: center;
   padding: 20px 0;
